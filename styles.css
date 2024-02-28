@@ -20,7 +20,7 @@
     font-weight: 800;
   }
   .logo a:hover {
-    color: rgb(240, 197, 6);
+    color: rgb(0, 0, 0);
     transition-duration: 1s;
   }
   .heading ul li {
@@ -178,7 +178,7 @@
   }
   .section2 .container .items .name {
     text-align: center;
-    background-color: rgb(240, 197, 6);
+    background-color: rgb(0, 0, 0);
     height: 25px;
     padding-top: 4px;
     color: white;
@@ -402,7 +402,7 @@
       font-weight: 900;
     }
     .menu ul li a:hover {
-      color: rgb(240, 197, 6);
+      color: rgb(0, 0, 0);
     }
     .img-slider {
       display: flex;
