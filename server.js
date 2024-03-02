@@ -5,9 +5,14 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.post('/logout', (req,res) => {
+    res.render('login'); // Assuming 'login.ejs' is in your views directory
+});
+ 
 app.get('/',(req,res)=>{
     res.render('main')
 })
+ 
 app.post('/payment', (req, res) => {
    
     res.render('payment');
@@ -27,8 +32,10 @@ app.post('/complete-payment', (req, res) => {
 });
 app.post('/cart',(req,res)=>{
     res.render('cart.ejs')
+}) 
+app.post('/logout',(req,res)=>{
+    res.render('login.ejs')
 })
-
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
-});
+}); 

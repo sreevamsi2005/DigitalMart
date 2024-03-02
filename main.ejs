@@ -590,6 +590,23 @@
         flex-wrap: nowrap;
       }
 
+      .btnforLogout {
+        background-color: #ff6347;
+        /* Coral color, you can change this to your desired color */
+        color: #fff;
+        /* White text color */
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      /* Hover effect for the Logout button */
+      .btnforLogout:hover {
+        background-color: #ff4500;
+        /* Darker coral color on hover */
+      }
     }
   </style>
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
@@ -625,7 +642,6 @@
         <li><a href="#" class="under">OUR PRODUCTS</a></li>
         <li><a href="#" class="under">CONTACT US</a></li>
         <li><a href="#" class="under">ABOUT US</a></li>
-      </ul>
     </div>
     <div class="heading1">
       <ion-icon name="menu" class="ham"></ion-icon>
@@ -948,11 +964,15 @@
       </div>
 
     </div>
+
+  </section><br><br>
+  <section>
+    <div>
+      <form action="/logout" method="post"><button onclick="showAlert()" style=" font-size: larger; height: 60px; width: 100%; margin-left: 60px; margin-right: 60px; padding: 8px; border: none; border-radius: 5px; background-color: rgb(0, 0, 0); color: white; cursor: pointer;"><b>LOGOUT</b></button></form>
     </div>
-
-  </section>
-
+  </section><br><br>
   <footer>
+
     <div class="footer0">
       <h1>DigitalMart</h1>
     </div>
@@ -1007,17 +1027,23 @@
       </div>
     </div>
     <div class="footer3">Copyright © <h4>DigitalMart</h4> 2021-2028</div>
+
   </footer>
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-  // JavaScript functions for main.html
-  <script> 
-    function addToCart(productName) { 
-      const cart = JSON.parse(localStorage.getItem('cart')) || []; 
-      cart.push(productName); 
-      localStorage.setItem('cart', JSON.stringify(cart)); 
+
+  <script>
+    function addToCart(productName) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(productName);
+      localStorage.setItem('cart', JSON.stringify(cart));
       window.location.href = 'cart.ejs';
     }
+    function showAlert() {
+      alert("You Logged Out!");
+    }
   </script>
+
+
 </body>
 
 

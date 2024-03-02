@@ -6,103 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Page</title>
     <style>
-    body {
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: #f5f5f5;
-    }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+        }
 
-    header {
-        background-color: #333;
-        padding: 10px 0;
-        text-align: center;
-    }
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-    .logo a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 24px;
-    }
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+        }
 
-    h1 {
-        text-align: center;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 40px;
-        color: #333;
-    }
+        h1 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 40px;
+            color: #333;
+        }
 
-    .box-container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin: 20px auto;
-        max-width: 600px;
-    }
+        .box-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+        }
 
-    h2 {
-        font-size: 24px;
-        color: #555;
-        text-align: center;
-        margin-bottom: 20px;
-    }
+        h2 {
+            font-size: 24px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    .payment-option {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-    input[type="radio"] {
-        margin-right: 10px;
-    }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
 
-    label {
-        color: #666;
-        font-size: 16px;
-    }
+        label {
+            color: #666;
+            font-size: 16px;
+        }
 
-    .button {
-        background-color: #3498db;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-        display: block;
-        margin: 0 auto;
-    }
+        .button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
 
-    .button:hover {
-        background-color: #217dbb;
-    }
-</style>
-   </head>
+        .button:hover {
+            background-color: #217dbb;
+        }
+    </style>
+</head>
 
 <body>
     <header>
         <div class="logo"><a href="#">DigitalMart</a></div>
     </header>
-  <br>
-  <br>
-  <div> <h1>Payment Page</h1></div><br><br>
-  <div class="box-container">
-  <div><h2>    Choose your payment method:</h2> </div><br><br>
-  <div>  
-    <form action="/complete-payment" method="post">
-        <div class="payment-option"> <input type="radio" id="cashOnDelivery" name="payment" value="Cash on Delivery">
-        <label for="cashOnDelivery">Cash on Delivery</label></div>
-        <div class="payment-option">  <input type="radio" id="creditcard" name="payment" value="Credit card">
-        <label for="creditcard">Credit card</label></div>
-        <div class="payment-option">  <input type="radio" id="debitcard" name="payment" value="Debit card">
-        <label for="debitcard">Debit card</label></div>
-        <div class="payment-option">  <input type="radio" id="upi" name="payment" value="upi">
-        <label for="upi"></label>Upi</div>
-        <button type="submit" class="button" onclick="showPrompt()">Proceed to Payment</button>
-    </form>
-</div>    
-</div>
+    <br>
+    <br>
+    <div>
+        <h1>Payment Page</h1>
+    </div><br><br>
+    <div class="box-container">
+        <div>
+            <h2> Choose your payment method:</h2>
+        </div><br><br>
+        <div>
+            <form action="/complete-payment" method="post">
+                <div class="payment-option"> <input type="radio" id="cashOnDelivery" name="payment"
+                        value="Cash on Delivery">
+                    <label for="cashOnDelivery">Cash on Delivery</label>
+                </div>
+                <div class="payment-option"> <input type="radio" id="creditcard" name="payment" value="Credit card">
+                    <label for="creditcard">Credit card</label>
+                </div>
+                <div class="payment-option"> <input type="radio" id="debitcard" name="payment" value="Debit card">
+                    <label for="debitcard">Debit card</label>
+                </div>
+                <div class="payment-option"> <input type="radio" id="upi" name="payment" value="upi">
+                    <label for="upi"></label>Upi
+                </div>
+                <button type="submit" class="button" onclick="showPrompt()">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <a href="/" class="button">Back to Home</a> 
+    </footer>
 </body>
 
 </html>
