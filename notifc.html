@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-commerce Website</title>
+</head>
+<body>
+
+<button onclick="addProduct()">Add Product</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  socket.on('newProduct', function(product) {
+    showNotification(product.name);
+  });
+
+  function showNotification(productName) {
+    alert(`New product added: ${productName}`);
+  }
+
+  function addProduct() {
+    const productName = prompt("Enter product name:");
+    const productPrice = parseFloat(prompt("Enter product price:"));
+   
+    fetch('/api/products', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name: productName, price: productPrice })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+  }
+</script>
+
+</body>
+</html>
